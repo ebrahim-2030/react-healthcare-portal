@@ -5,7 +5,6 @@
 
 body {
   @apply text-custom-black;
-  @apply overflow-hidden;
   font-family: "Montserrat", sans-serif;
 }
 

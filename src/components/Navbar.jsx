@@ -1,9 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { CgClose, CgMenuRight } from "react-icons/cg";
 import { useState } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
-// define menu items to be reused for desktop and mobile views
+// reusable menu items 
 const menuItems = [
   { path: "/", lable: "home" },
   { path: "/doctors", lable: "doctors" },
@@ -13,6 +14,21 @@ const menuItems = [
 const Navbar = () => {
   // state to toggle the mobile menu visibility
   const [isOpen, setIsOpen] = useState(false);
+
+  // login page navigator
+  const navigator = useNavigate();
+
+  // navigate to appointments page
+  const handleAppointmenNavigate = () => {
+    navigator("/appointments");
+    setIsOpen(false);
+  };
+
+  // navigate to profile page
+  const handleProfileNavigate = () => {
+    navigator("/profile");
+    setIsOpen(false);
+  };
 
   return (
     // main navigation container
@@ -44,11 +60,37 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* button + mobile menu toggle icon (only visible on small screens) */}
+        {/* profile dropdonw and mobile menu icon */}
         <div>
-          <button className="hidden md:block px-6 py-3  bg-brand rounded-full text-white text-sm font-medium">
-            Create Account
-          </button>
+          {/* profile dropdown (hidden in mobile) */}
+          <div className="hidden md:block relative group cursor-pointer">
+            <div className="flex items-center gap-2 py-[13px] rounded-md">
+              <img
+                className="w-11 h-11 rounded-full border-2 border-brand p-0.5"
+                src={assets.profile_pic}
+                alt=""
+              />
+              <MdKeyboardArrowDown className="text-xl" />
+            </div>
+
+            <ul className="absolute right-0  w-48 bg-white border border-t-0 opacity-0 pointer-events-none transform -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
+              <li
+                onClick={() => navigator("/profile")}
+                className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              >
+                My Profile
+              </li>
+              <li
+                onClick={() => navigator("/appointments")}
+                className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              >
+                My Appointments
+              </li>
+              <li className="block px-4 py-2 hover:bg-gray-100">Logout</li>
+            </ul>
+          </div>
+
+          {/* mobile menu (visible on mobile) */}
           <CgMenuRight
             onClick={() => setIsOpen(true)}
             className="text-3xl text-custom-black/80 cursor-pointer md:hidden"
@@ -58,11 +100,33 @@ const Navbar = () => {
 
       {/* mobile menu drawer */}
       <div
-        className={`fixed top-0 w-full bg-brand text-white flex flex-col items-start p-10 pt-20 ${
+        className={`fixed top-0 w-full bg-brand text-white flex flex-col items-start p-10 pt-16 ${
           isOpen ? "left-0" : "-left-full"
         } transition-all linear duration-500 `}
       >
-        <ul className="flex flex-col gap-2 capitalize">
+        {/* profile and logout */}
+        <div className="border-b w-full border-white pb-4 ">
+          <div className="flex items-center gap-2 ">
+            <img
+              onClick={handleProfileNavigate}
+              className="w-11 rounded-full border-2 border-white p-0.5 cursor-pointer"
+              src={assets.profile_pic}
+              alt=""
+            />
+            <span className="text-sm">Mark Overton</span>
+          </div>
+          <ul className="mt-4 flex flex-col gap-2">
+            <li className="cursor-pointer" onClick={handleAppointmenNavigate}>
+              My Appointments
+            </li>
+            <li className="cursor-pointer" onClick={() => setIsOpen(false)}>
+              Logout
+            </li>
+          </ul>
+        </div>
+
+        {/* mobile menu items */}
+        <ul className="mt-4 flex flex-col gap-2 capitalize">
           {menuItems.map((item) => {
             return (
               <NavLink
@@ -76,11 +140,6 @@ const Navbar = () => {
             );
           })}
         </ul>
-
-        {/* mobile "create account" button */}
-        <button className="mt-8 px-6 py-2.5 border bg-white rounded-full text-brand text-sm font-medium">
-          Create Account
-        </button>
 
         {/* close icon for mobile menu */}
         <div>
