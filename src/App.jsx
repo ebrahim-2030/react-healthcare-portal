@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="mx-3 md:mx-6 w-full xl:mx-auto xl:bg-blue-400 xl:max-w-screen-xl ">
+    <div className="px-3 md:px-6 w-full xl:mx-auto xl:max-w-screen-xl ">
       <Router>
         {/* navbar */}
         <Navbar />
