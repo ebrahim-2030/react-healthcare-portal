@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
+
+    // main container
     <div className="h-[86vh] lg:h-[84vh] my-[2vh]  md:my-5  bg-gradient-to-br from-[#5f6fff] via-[#7a80ff] to-[#bfc3ff] rounded-xl text-white flex flex-col  gap-6 justify-between lg:flex-row lg:items-center lg:gap-0 lg:px-6 xl:px-20">
+
+      {/* left section (text) */}
       <div className="lg:flex-1 px-6 pt-8 flex-1 flex flex-col  items-start sm:items-center lg:items-start lg:justify-center  lg:pt-20">
         <h1 className=" text-3xl font-bold sm:text-4xl lg:text-5xl sm:text-center lg:text-start leading-10 sm:leading-[50px] lg:leading-[70px] ">
           Book Appointment With <br className="hidden md:block lg:hidden" />
@@ -25,6 +29,8 @@ const Header = () => {
           Book appointment
         </Link>
       </div>
+
+      {/* right section (image) */}
       <div className=" lg:w-[45%] xl:w-[40%]  h-[50%] lg:h-full relative px-4  pt-4 sm:pt-0 flex justify-center">
         <img
           className=" h-full lg:h-[400px] absolute bottom-0 w-[350px] sm:w-[400px] lg:w-[450px]    "

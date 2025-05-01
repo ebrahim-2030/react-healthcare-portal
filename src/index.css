@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 body {
+  
   @apply text-custom-black;
   font-family: "Montserrat", sans-serif;
 }

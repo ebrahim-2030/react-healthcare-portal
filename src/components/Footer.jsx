@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="mt-10">
+    <footer>
       <div className="md:flex justify-between gap-12">
 
         {/* logo & company desciption */}
         <div>
-          <Link to="/" className="flex items-end ">
+          <Link to="/" className="flex items-end md:-mt-4">
             <img
               src={assets.logo}
               className="w-10 h-10 lg:w-[54px] lg:h-[54px]"
@@ -19,7 +19,7 @@ const Footer = () => {
               HealthCare
             </span>
           </Link>
-          <p className="text-sm md:max-w-[450px] leading-6 mt-4 font-medium text-custom-black/80 text-justify">
+          <p className="text-sm md:max-w-[450px] leading-6 mt-6 font-medium text-custom-black/80 text-justify">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro,
             quod incidunt? Cumque laboriosam rem error ullam! Quisquam
             reiciendis magni architecto nobis aperiam in facere, enim ratione
