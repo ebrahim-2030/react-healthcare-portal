@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import Header from "../components/Header";
+import Speciality from "../components/Speciality";
 
 const Home = () => {
   return (
-    <div>Home Page</div>
-  )
-}
+    <div className="">
+      <section>
+        <Header />
+      </section>
 
-export default Home
+      <section className="mt-12">
+        <Speciality />
+      </section>
+    </div>
+  );
+};
+
+export default Home;

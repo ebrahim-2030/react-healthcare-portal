@@ -100,7 +100,7 @@ const Navbar = () => {
 
       {/* mobile menu drawer */}
       <div
-        className={`fixed top-0 w-full bg-brand text-white flex flex-col items-start p-10 pt-16 ${
+        className={`fixed top-0 w-full bg-brand shadow-lg text-white flex flex-col items-start p-10 pt-16 ${
           isOpen ? "left-0" : "-left-full"
         } transition-all linear duration-500 `}
       >
