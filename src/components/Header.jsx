@@ -27,7 +27,7 @@ const Header = () => {
         >
           Book appointment
         </Link>
-      </div>s
+      </div>
 
       {/* Right Section */}
       <div className="flex justify-center lg:absolute bottom-0 right-10 w-full lg:w-[400px] xl:w-[500px]">

@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     // main navigation container
-    <nav className="h-[10vh]  flex flex-col justify-center border-b">
+    <nav className="h-[10vh]  flex flex-col justify-center border-b z-50">
       <div className=" w-full flex items-center justify-between">
         {/* logo and menu togle */}
         <Link to="/" className="flex items-end">
@@ -73,7 +73,7 @@ const Navbar = () => {
               <MdKeyboardArrowDown className="text-xl" />
             </div>
 
-            <ul className="absolute right-0  w-48 bg-white border border-t-0 opacity-0 pointer-events-none transform -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
+            <ul className=" absolute right-0  w-48 bg-white border border-t-0 opacity-0 pointer-events-none transform -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
               <li
                 onClick={() => navigator("/profile")}
                 className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"

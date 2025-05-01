@@ -16,7 +16,7 @@ const Speciality = () => {
       </p>
 
       {/* horizontal scrollable container for speciality options */}
-      <div className="flex w-full gap-4 overflow-x-scroll sm:overflow-x-hidden pb-4  pt-8 md:justify-center ">
+      <div className="flex w-full gap-4 overflow-x-scroll custom-scrollbar sm:overflow-x-hidden pb-4  pt-8 md:justify-center ">
         {specialityData.map((item, index) => (
           <Link
             onClick={() => scrollTo(0, 0)}
