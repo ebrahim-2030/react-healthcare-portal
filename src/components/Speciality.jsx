@@ -11,8 +11,8 @@ const Speciality = () => {
 
       {/* description */}
       <p className="  text-center mb-2 text-sm font-medium text-custom-black/80">
-        Simply browse through our extensive list of trusted <br /> doctors,
-        schedule your appointment hassle-free.
+        Simply browse through our extensive list of trusted doctors,
+        schedule <br className="hidden md:block" />   your appointment hassle-free.
       </p>
 
       {/* horizontal scrollable container for speciality options */}

@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const App = () => {
+  
   return (
     <div className="px-3 md:px-6 w-full xl:mx-auto xl:max-w-screen-xl ">
       <Router>

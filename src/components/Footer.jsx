@@ -34,16 +34,16 @@ const Footer = () => {
           </h2>
           <ul className="mt-8 text-sm font-medium text-custom-black/80 flex flex-col gap-2">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" className="hover:text-brand">Home</Link>
             </li>
             <li>
-              <Link to="/about">About us</Link>
+              <Link to="/about" className="hover:text-brand">About us</Link>
             </li>
             <li>
-              <Link to="/">Delivery</Link>
+              <Link to="/" className="hover:text-brand">Delivery</Link>
             </li>
             <li>
-              <Link to="/">Privacy policy</Link>
+              <Link to="/" className="hover:text-brand">Privacy policy</Link>
             </li>
           </ul>
         </div>
