@@ -4,19 +4,24 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="relative -z-10 flex flex-col lg:flex-row bg-gradient-to-br from-[#5f6fff] via-[#7a80ff] to-[#bfc3ff] rounded-xl text-white overflow-hidden lg:h-[84vh] my-4 lg:px-12 xl:px-20">
-      
+    <div className="relative -z-10 flex flex-col lg:flex-row bg-gradient-to-t from-[#9063e4] to-brand rounded-xl text-white overflow-hidden lg:h-[84vh] my-4 lg:px-12 xl:px-20 pt-2 px-4 md:px-0">
       {/* Left Section */}
       <div className="flex-1 px-4 pt-8 sm:px-6 sm:pt-10 lg:pt-20 flex flex-col items-start sm:items-center lg:items-start justify-center gap-6">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-10 sm:leading-[50px] lg:leading-[70px] text-start sm:text-center lg:text-start">
-          Book Appointment <br className="hidden lg:block" /> With <br className="hidden sm:block lg:hidden" />
+          Book Appointment <br className="hidden lg:block" /> With{" "}
+          <br className="hidden sm:block lg:hidden" />
           Trusted Doctors
         </h1>
 
         <div className=" sm:my-3 flex flex-col items-start sm:items-center lg:items-start lg:flex-row gap-4">
-          <img src={assets.group_profiles} alt="Group of doctors" className="h-10 "  />
+          <img
+            src={assets.group_profiles}
+            alt="Group of doctors"
+            className="h-10 "
+          />
           <p className="text-sm leading-6 text-white sm:text-center lg:text-start">
-            Simply browse through our extensive list of trusted doctors, <br className="hidden sm:block" />
+            Simply browse through our extensive list of trusted doctors,{" "}
+            <br className="hidden sm:block" />
             schedule your appointment hassle-free.
           </p>
         </div>
