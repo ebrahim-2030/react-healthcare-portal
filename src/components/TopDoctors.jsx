@@ -7,6 +7,8 @@ const TopDoctors = () => {
   // get doctores form context
   const { doctors } = useContext(AppContext);
 
+  const navigator = useNavigate();
+
   return (
     <div className="flex flex-col items-center px-4 sm:px-0">
       {/* heading and describtion */}
@@ -30,7 +32,7 @@ const TopDoctors = () => {
       <button
         onClick={() => {
           navigator("/doctors");
-          scrollTo(0.0);
+          scrollTo(0,0);
         }}
         className="mt-4 px-6 py-3 text-sm rounded-full bg-brand/90 hover:bg-brand transition-all duration-100 text-white"
       >
