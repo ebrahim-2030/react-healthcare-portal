@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     // main navigation container
-    <nav className="h-[10vh]  flex flex-col justify-center border-b z-50">
+    <nav className="h-[10vh]  flex flex-col justify-center border-b ">
       <div className=" w-full flex items-center justify-between">
         {/* logo and menu togle */}
         <Link to="/" className="flex items-end">
@@ -100,7 +100,7 @@ const Navbar = () => {
 
       {/* mobile menu drawer */}
       <div
-        className={`fixed top-0 w-full bg-brand shadow-lg text-white flex flex-col items-start p-10 pt-16 ${
+        className={`fixed top-0 z-50 w-full bg-brand shadow-lg text-white flex flex-col items-start p-10 pt-16 ${
           isOpen ? "left-0" : "-left-full"
         } transition-all linear duration-500 `}
       >

@@ -15,7 +15,7 @@ const DocItem = ({ item }) => {
     <div
       onClick={() => handleAppontmentNavigaror(item._id)}
       key={item._id}
-      className=" shadow  rounded-lg overflow-hidden hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+      className=" w-full shadow  rounded-lg overflow-hidden hover:-translate-y-2 transition-all duration-500 cursor-pointer"
     >
       <img className="bg-blue-50" src={item.image} alt="doctor" />
       <div className="p-4">

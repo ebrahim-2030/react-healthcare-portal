@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="relative flex flex-col lg:flex-row bg-gradient-to-br from-[#5f6fff] via-[#7a80ff] to-[#bfc3ff] rounded-xl text-white overflow-hidden lg:h-[84vh] my-4 lg:px-12 xl:px-20">
+    <div className="relative -z-10 flex flex-col lg:flex-row bg-gradient-to-br from-[#5f6fff] via-[#7a80ff] to-[#bfc3ff] rounded-xl text-white overflow-hidden lg:h-[84vh] my-4 lg:px-12 xl:px-20">
       
       {/* Left Section */}
       <div className="flex-1 px-4 pt-8 sm:px-6 sm:pt-10 lg:pt-20 flex flex-col items-start sm:items-center lg:items-start justify-center gap-6">
