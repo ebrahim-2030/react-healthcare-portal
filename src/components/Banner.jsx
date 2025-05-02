@@ -8,7 +8,7 @@ const Banner = () => {
 
   return (
 
-    <div className="bg-brand  rounded-xl md:flex justify-between">
+    <div className="bg-gradient-to-t from-[#9063e4] to-brand  rounded-xl md:flex justify-between">
 
         {/* left content (text) */}
       <div className="text-xl sm:text-4xl lg:text-4xl font-semibold text-white py-8 sm:py-10 px-6 sm:px-12  lg:p-16">

@@ -25,7 +25,7 @@ const Doctors = () => {
   };
   return (
     <div className="mt-4 mb-12 sm:mb-20 lg:mb-28 px-4 sm:px-0 flex flex-col items-center">
-      <p className="font-medium text-custom-black/80">
+      <p className="font-medium text-custom-black/80 w-full">
         Browse through the doctors specialist.
       </p>
       <div className=" flex flex-col items-center sm:flex-row sm:items-start sm:justify-between mt-10  gap-6">

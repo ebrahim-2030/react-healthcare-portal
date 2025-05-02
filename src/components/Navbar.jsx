@@ -52,6 +52,7 @@ const Navbar = () => {
         <ul className=" hidden md:flex items-center gap-5 lg:gap-10 md:font-medium text-custom-black/80 capitalize">
           {menuItems.map((item) => (
             <NavLink
+            className="hover:text-brand"
               to={item.path}
               key={item.path}
               onClick={() => setIsOpen(false)}
@@ -77,22 +78,22 @@ const Navbar = () => {
                     <MdKeyboardArrowDown className="text-xl" />
                   </div>
 
-                  <ul className=" absolute right-0  w-48 bg-white border border-t-0 opacity-0 pointer-events-none transform -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
+                  <ul className=" absolute right-0  w-60 rounded-sm bg-gradient-to-tr from-[#9063e4] to-brand text-white p-4 shadow-lg  opacity-0 pointer-events-none transform -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
                     <li
                       onClick={() => navigator("/profile")}
-                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      className="block px-4 py-2 hover:bg-white hover:text-black/80 rounded cursor-pointer"
                     >
                       My Profile
                     </li>
                     <li
                       onClick={() => navigator("/appointments")}
-                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      className="block px-4 py-2 hover:bg-white hover:text-black/80 rounded cursor-pointer"
                     >
                       My Appointments
                     </li>
                     <li
                       onClick={() => setToken(false)}
-                      className="block px-4 py-2 hover:bg-gray-100"
+                      className="block px-4 py-2 hover:bg-white hover:text-black/80 rounded"
                     >
                       Logout
                     </li>

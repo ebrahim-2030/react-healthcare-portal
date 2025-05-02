@@ -1,10 +1,16 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigator = useNavigate();
+
+  const handleNavigate = () => {
+    navigator("/doctors");
+    window.scrollTo(0,0)
+  }
   return (
-    <div className="relative -z-10 flex flex-col lg:flex-row bg-gradient-to-t from-[#9063e4] to-brand rounded-xl text-white overflow-hidden lg:h-[84vh] my-4 lg:px-12 xl:px-20 pt-2 px-4 md:px-0">
+    <div className="relative  flex flex-col lg:flex-row bg-gradient-to-t from-[#9063e4] to-brand rounded-xl text-white overflow-hidden lg:h-[84vh] my-4 lg:px-12 xl:px-20 pt-2 px-4 md:px-0">
       {/* Left Section */}
       <div className="flex-1 px-4 pt-8 sm:px-6 sm:pt-10 lg:pt-20 flex flex-col items-start sm:items-center lg:items-start justify-center gap-6">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-10 sm:leading-[50px] lg:leading-[70px] text-start sm:text-center lg:text-start">
@@ -26,12 +32,12 @@ const Header = () => {
           </p>
         </div>
 
-        <Link
-          to="/appointments"
-          className="px-6 py-3 bg-white text-custom-black/90 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200"
+        <button
+          onClick={handleNavigate}
+          className="px-6 py-3 bg-white cursor-pointer text-custom-black/90 text-xs font-medium rounded-full hover:scale-105 transition-transform duration-100"
         >
           Book appointment
-        </Link>
+        </button>
       </div>
 
       {/* Right Section */}

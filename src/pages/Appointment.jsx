@@ -4,6 +4,8 @@ import { AppContext } from "../contexts/AppContext";
 import { HiMiniCheckBadge, HiOutlineInformationCircle } from "react-icons/hi2";
 import RelatedDoctors from "../components/RelatedDoctors";
 
+import { ToastContainer, toast } from "react-toastify";
+
 const Appointment = () => {
   const { docId } = useParams();
   const { doctors } = useContext(AppContext);
@@ -25,19 +27,16 @@ const Appointment = () => {
     fetchDocInfo();
   }, [doctors, docId, docInfo]);
 
-  // useEffect(() => {
-  //   if (docInfo?.slots) {
-  //     const days = Object.keys(docInfo.slots);
-  //     // setSelectedDay(days[0]);
-  //   }
-  // }, [docInfo]);
-
+  // warning notify
+  const notify = () =>
+    toast("Please Pick a Time Slot Too!");
+  
   // handle booking logic
   const handleBooking = () => {
     if (selectedDay && selectedSlot) {
       navigator("/appointments");
       window.scrollTo(0, 0);
-    } else alert("Please pick a time slot too.");
+    } else notify();
   };
   return (
     docInfo && (
@@ -79,12 +78,11 @@ const Appointment = () => {
         </div>
 
         {/* booking slots */}
-        {/* doctors image */}
         <div className="flex items-center gap-6">
           <div className="hidden lg:block bg-white rounded-lg md:w-2/4 lg:w-2/6 xl:w-1/4   ">
             <div className="w-[400px]"></div>
           </div>
-          <div className="mt-12 w-full md:flex flex-col   ">
+          <div className="mt-8 w-full md:flex flex-col">
             {/* day buttons */}
             <div className="flex items-center md:items-start gap-4 custom-scrollbar overflow-x-scroll sm:overflow-hidden pb-4">
               {days.map((day, index) => (
@@ -104,14 +102,14 @@ const Appointment = () => {
             </div>
 
             {/* time slot buttons */}
-            <div className="flex items-center md:items-start gap-2 mt-6 custom-scrollbar overflow-x-scroll sm:overflow-hidden pb-4">
+            <div className="flex items-center md:items-start gap-2 mt-6 md:mt-2 custom-scrollbar overflow-x-scroll sm:overflow-hidden pb-4">
               {docInfo?.slots?.[selectedDay]?.length > 0 ? (
                 docInfo?.slots?.[selectedDay]?.map((slot, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedSlot(slot)}
-                    className={`border text-custom-black/70 border-custom-black/10 rounded-full block min-w-24 min-h-9  text-xs  font-medium ${
-                      selectedSlot === slot ? "bg-black/5 " : ""
+                    className={`border text-custom-black/70 border-custom-black/10 rounded-full block min-w-20 md:min-w-24 min-h-9  text-xs  font-medium ${
+                      selectedSlot === slot ? "bg-brand text-white " : ""
                     }`}
                   >
                     {slot}
@@ -125,7 +123,7 @@ const Appointment = () => {
             </div>
 
             {/* selected appointment display */}
-            <div className="mt-4">
+            <div className="mt-4 md:mt-2">
               {selectedDay && selectedSlot ? (
                 <>
                   <p className="text-sm font-medium text-custom-black/80">
@@ -144,12 +142,17 @@ const Appointment = () => {
 
             {/* action buttons */}
             <div className="flex items-center gap-4 mt-2">
-              <button
-                className="mt-4 px-6 py-3 bg-brand text-white text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                onClick={handleBooking}
-              >
-                Book Now
-              </button>
+              <div>
+                <button
+                  className="mt-4 px-6 py-3 bg-brand text-white text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={handleBooking}
+                >
+                  Book Now
+                </button>
+                <ToastContainer
+                  
+                />
+              </div>
               <button
                 className="mt-4 px-6 py-3 bg-red-600 text-white text-xs font-medium rounded-full hover:scale-105 transition-transform duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={() => setSelectedSlot(null)}

@@ -4,38 +4,39 @@
 @tailwind utilities;
 
 body {
-  
   @apply text-custom-black;
   font-family: "Montserrat", sans-serif;
 }
-
+.active {
+  @apply text-brand;
+}
 .active hr {
   @apply block;
 }
 
 /* Style the scrollbar */
 ::-webkit-scrollbar {
-  width: 8px; 
-  height: 8px; 
+  width: 8px;
+  height: 8px;
 }
 .custom-scrollbar::-webkit-scrollbar {
-  width: 3px; 
-  height: 3px; 
+  width: 3px;
+  height: 3px;
 }
 
 /* Style the scrollbar track (the background of the scrollbar) */
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1; 
+  background-color: #f1f1f1;
   border-radius: 10px;
 }
 
 /* Style the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background-color: #5f6fff; 
+  background-color: #5f6fff;
   border-radius: 10px;
 }
 
 /* Optional: Style the thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.6); 
+  background-color: rgba(0, 0, 0, 0.6);
 }
