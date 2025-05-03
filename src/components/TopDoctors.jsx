@@ -34,9 +34,9 @@ const TopDoctors = () => {
           navigator("/doctors");
           scrollTo(0,0);
         }}
-        className="mt-4 px-6 py-3 text-sm rounded-full bg-brand/90 hover:bg-brand transition-all duration-100 text-white"
+        className="mt-4 px-6 py-3 text-sm font-medium rounded-full bg-brand/90 hover:bg-brand transition-all duration-100 text-white"
       >
-        more
+        More
       </button>
     </div>
   );

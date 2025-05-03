@@ -16,7 +16,7 @@ const Profile = () => {
   });
 
   // state to enble edite user data
-  const [isEdit, setIsEdit] = useState(true);
+  const [isEdit, setIsEdit] = useState(false);
   return (
     <div className="mt-6 mb-12 md:mb-20 max-w-sm">
       {/* user image */}

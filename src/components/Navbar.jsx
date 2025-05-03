@@ -52,7 +52,7 @@ const Navbar = () => {
         <ul className=" hidden md:flex items-center gap-5 lg:gap-10 md:font-medium text-custom-black/80 capitalize">
           {menuItems.map((item) => (
             <NavLink
-            className="hover:text-brand"
+              className="hover:text-brand"
               to={item.path}
               key={item.path}
               onClick={() => setIsOpen(false)}
@@ -133,14 +133,14 @@ const Navbar = () => {
         <ul className="mt-4 flex flex-col gap-2 capitalize">
           {menuItems.map((item) => {
             return (
-              <NavLink
+              <Link
                 to={item.path}
                 key={item.path}
                 onClick={() => setIsOpen(false)}
               >
                 <span>{item.lable}</span>
                 <hr className="hidden border-none outline-none h-[1.5px] bg-white w-1/2" />
-              </NavLink>
+              </Link>
             );
           })}
         </ul>
@@ -179,6 +179,7 @@ const Navbar = () => {
               onClick={() => {
                 navigator("/login");
                 scrollTo(0, 0);
+                setIsOpen(false);
               }}
               className="px-6 py-3 bg-white text-sm text-custom-black/90 rounded-full  font-medium hover:scale-105 transition-all duration-200"
             >

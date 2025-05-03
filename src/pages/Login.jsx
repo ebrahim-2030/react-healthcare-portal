@@ -5,7 +5,7 @@ const Login = () => {
   function handleSubmite(e) {
     e.preventDefault();
   }
-a
+
   return (
     <div className="h-[90vh] flex justify-center items-center">
       <div className=" w-[360px] sm:w-[400px] text-white   p-8  pt-12 rounded-lg bg-gradient-to-t from-[#9063e4] to-brand ">

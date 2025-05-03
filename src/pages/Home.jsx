@@ -6,7 +6,7 @@ import Banner from "../components/Banner";
 
 const Home = () => {
   return (
-    <div>
+    <div className="mb-12 md:mb-20">
       {/* header section */}
       <section>
         <Header />

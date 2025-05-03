@@ -2,10 +2,10 @@ import { assets } from "../assets/assets";
 const About = () => {
   return (
     <div
-      className="mt-10 mb-10 md:mb-20
+      className="mt-3 md:mt-6 lg:mt-12 mb-10 md:mb-20
      "
     >
-      <div className="sm:flex flex-col md:items-center lg:flex-row lg:items-stretch gap-4">
+      <div className="sm:flex flex-col sm:items-center lg:flex-row lg:items-stretch gap-4">
 
         {/* abou us image */}
         <div className="sm:w-1/2 lg:w-2/5">
